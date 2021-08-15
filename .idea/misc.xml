@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/drawable/bg_button_main.xml" value="0.35" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/drawable/bg_round_image.xml" value="0.2046875" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/layout/activity_add_plant_in_garden.xml" value="0.4" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/layout/activity_login2.xml" value="0.17028985507246377" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/layout/activity_main.xml" value="0.1852355072463768" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/layout/activity_splash.xml" value="0.176" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/layout/fragment_garden.xml" value="0.1838768115942029" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/layout/item_garden_plant_add.xml" value="0.176" />
+        <entry key="..\:/developer/Android/workspace/PiDanGarden/app/src/main/res/layout/item_garden_plant_show.xml" value="0.4" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
