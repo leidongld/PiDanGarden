@@ -14,6 +14,9 @@ public class SplashContract {
     }
 
     public interface ISplashPresenter extends BasePresenter {
-
+        /**
+         * 跳转到登录页面
+         */
+        void jumpToLoginPage();
     }
 }

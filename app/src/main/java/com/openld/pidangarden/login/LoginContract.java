@@ -32,5 +32,10 @@ public class LoginContract {
          * @param loginInfoBean 登录信息对象
          */
         void login(@NonNull LoginInfoBean loginInfoBean);
+
+        /**
+         * 跳转到主页
+         */
+        void jumpToMainPage();
     }
 }

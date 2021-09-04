@@ -10,4 +10,7 @@
     <color name="divider">#32CD32</color>
     <color name="color_btn_text">#32CD32</color>
     <color name="gray">#696969</color>
+
+    <color name="bg_light">#FFFFFF</color>
+    <color name="bg_deep">#EEEEEE</color>
 </resources>

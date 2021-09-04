@@ -60,6 +60,7 @@ public class AddPlantInGardenActivity extends AppCompatActivity implements AddPl
     private void requestPermissions() {
         boolean cameraPermissionStatus = PackageManager.PERMISSION_GRANTED == checkSelfPermission(Manifest.permission.CAMERA);
         boolean storagePermissionStatus = PackageManager.PERMISSION_GRANTED == checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
         List<String> permissionList = new ArrayList<>();
         if (!cameraPermissionStatus) {
             permissionList.add(Manifest.permission.CAMERA);
@@ -72,12 +73,14 @@ public class AddPlantInGardenActivity extends AppCompatActivity implements AddPl
             takePhoto();
         }
         requestPermissions(permissions, REQUEST_CODE_FOR_REQUEST_PERMISSIONS);
+        LogUtils.d(TAG, "开始请求权限");
     }
 
     /**
      * 执行拍照流程
      */
     private void takePhoto() {
+        LogUtils.d(TAG, "执行拍照流程");
         // 有多少个摄像头
         int numberOfCamera = Camera.getNumberOfCameras();
 

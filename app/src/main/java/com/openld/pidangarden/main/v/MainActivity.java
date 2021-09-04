@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.openld.networklib.NetworkLib;
+import com.openld.networklib.listeners.GetEnqueueListener;
 import com.openld.pidangarden.R;
 import com.openld.pidangarden.main.fragments.GardenFragment;
 import com.openld.pidangarden.main.fragments.MallFragment;
@@ -53,6 +55,23 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         setContentView(R.layout.activity_main);
 
         initWidgets();
+
+        // TODO: 2021/8/24 这里是网络库的一个测试
+        NetworkLib.GetRequester.newInstance()
+                .url("https://www.baidu.com")
+                .enqueue(new GetEnqueueListener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onFailure(String message) {
+                        Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+
+                    }
+                });
     }
 
     private void initWidgets() {
@@ -65,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         mTabGroup.setId(0);
         mTabGroup.setOnCheckedChangeListener(this);
 
-        mGardenFragment = GardenFragment.newInstance("garden1", "garden2");
+        mGardenFragment = GardenFragment.newInstance();
         mParamsFragment = ParamsFragment.newInstance("params1", "params2");
         mMallFragment = MallFragment.newInstance("mall1", "mall2");
         mMyFragment = MyFragment.newInstance("my1", "my2");
@@ -110,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
 
         if (fragment == null) {
-            mGardenFragment = GardenFragment.newInstance("garden1", "garden2");
+            mGardenFragment = GardenFragment.newInstance();
         }
         fragmentTransaction.replace(R.id.lly_container, mGardenFragment, "garden").commit();
     }

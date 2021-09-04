@@ -45,4 +45,5 @@ dependencies {
 
     api project(':toolkit')
     implementation project(':ViewBox')
+    implementation project(':networklib')
 }

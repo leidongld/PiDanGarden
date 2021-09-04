@@ -7,7 +7,9 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:name=".PiDanGardenApplication"
@@ -22,7 +24,7 @@
         <!--欢迎页-->
         <activity
             android:name=".splash.v.SplashActivity"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="IntentFilterExportedReceiver,LockedOrientationActivity">
@@ -57,7 +59,20 @@
             tools:ignore="LockedOrientationActivity" />
 
         <!--编辑花园中的植物-->
+        <activity
+            android:name=".garden.modifyplantingarden.v.ModifyPlantInGardenActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
 
+        <!--展示花园中的植物-->
+        <activity
+            android:name=".garden.showplantingarden.v.ShowPlantInGardenActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>

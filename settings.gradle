@@ -2,3 +2,4 @@ rootProject.name = "PiDanGarden"
 include ':app'
 include ':toolkit'
 include ':ViewBox'
+include ':networklib'

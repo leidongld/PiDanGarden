@@ -12,6 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.openld.pidangarden.R;
 import com.openld.pidangarden.login.v.LoginActivity;
 import com.openld.pidangarden.splash.SplashContract;
+import com.openld.pidangarden.splash.p.SplashPresenter;
 import com.openld.toolkit.LogUtils;
 import com.openld.toolkit.PreventContinueClickListener;
 
@@ -27,10 +28,15 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
     // 进入按钮
     private AppCompatButton mBtnEnter;
 
+    private SplashContract.ISplashPresenter mPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        mPresenter = new SplashPresenter();
+        mPresenter.bindPresenter(this);
 
         initWidgets();
 
@@ -58,10 +64,17 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
         mBtnEnter.setOnClickListener(new PreventContinueClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.releasePresenter();
     }
 }
